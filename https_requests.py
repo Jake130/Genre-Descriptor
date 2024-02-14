@@ -1,5 +1,4 @@
 import requests
-import json
 from dotenv import load_dotenv
 import os
 import sys
@@ -39,15 +38,14 @@ def search_artist(artist:str):
     
 
 def reprompt_searched_artist(search_json, index):
-    i = index
     if index>=len(search_json['message']['body']['artist_list']):
         print("There are no other artists under this name... quitting program")
         sys.exit()
-    print("Is the artist you're looking for: " + search_json['message']['body']['artist_list'][i]['artist']['artist_name'] + "?")
+    print("Is the artist you're looking for: " + search_json['message']['body']['artist_list'][index]['artist']['artist_name'] + "?")
     #Print all artists existing aliases
-    if search_json['message']['body']['artist_list'][i]!=None:
+    if search_json['message']['body']['artist_list'][index]!=None:
         res = "Also known as: "
-        for alias in search_json['message']['body']['artist_list'][i]['artist']['artist_alias_list']:
+        for alias in search_json['message']['body']['artist_list'][index]['artist']['artist_alias_list']:
             res += alias['artist_alias'] + ", "
         print(res)
     print("Enter 'no' if this is not the case")
