@@ -102,23 +102,6 @@ def get_album(album_id:int)->list:
 
 
 if __name__=="__main__":
-    arguments = sys.argv
-    if len(sys.argv)<3:
-        raise RuntimeError("There are too little arguments!")
-    if len(sys.argv)>5:
-        raise RuntimeError("More than four arguments were entered!")
-    searching_artist = search_artist(arguments[1])
-    #print(selected_artist)
-    index = 0
-    while True:
-        response = reprompt_searched_artist(searching_artist, index)
-        index += 1
-        if response==False:
-            break
-    index -= 1
-    selected_artist = searching_artist['message']['body']['artist_list'][index]['artist']['artist_id']
-    #We have our desired artist at the index
-    discography_list = get_discography(selected_artist)
-    print(discography_list)
+    print("Running \"https_requests.py\" is reserved for testing.")
 
 

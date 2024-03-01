@@ -1,8 +1,16 @@
 import https_requests as mxr
 import spotify_requests as spr
 import sys
+import graphics
+import enum
 
-
+class PHASES(enum.Enum):
+    """Stages where User Input is Required to continue
+    the program."""
+    PROMPT_ARTIST = 0
+    CONFIRM_ARTIST = 1
+    PROMPT_MOOD = 2
+    QUIT = 3
 
 
 def main():
@@ -12,11 +20,12 @@ def main():
     if len(sys.argv)>5:
         raise RuntimeError("More than four arguments were entered!")
     #Allow the user to search for the artist they're looking for
-    #print(spr.get_access())
+    print(spr.get_access())
+    gui = graphics.GUI()
     searched_artist = spr.search_artist(arguments[1])
     index = 0
     while True:
-        response = spr.reprompt_searched_artist(searched_artist, index)
+        response = spr.reprompt_searched_artist(gui, searched_artist, index)
         index += 1
         if response==False:
             break
