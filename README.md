@@ -20,3 +20,24 @@ can hit enter and the stage will terminate.
 albums. The user must only hit enter when all data is gathered, and they are prompted.
 - Creating and displaying a Graph: The display space shows the graphical representation that was generated.
 
+## Generating an access token
+
+Acess tokens to Spotify's stored data last one hour, if this is the first search of a session or an hour has passed a new one will need
+to be generated. Do this by running the program, and in the console the long stream of random characters that follows `access token` can be copied,
+and pasted between the empty quotations marks that come after the `SPOTIFY_BEARER_TOKEN` variable in the envirionment variable file `.env`. Terminate 
+the program by closing the pop-up window, and run again to coninue to the next phase.
+
+## Searching for an artist
+
+To search for an artist, enter the artist's name in the entry bar. If the first artist that comes up is not the one you are looking for, enter "no" and
+another artist will pop up. The process will repeat until the user hits enter in the entry bar to confirm the artist, or the program determines that there
+are no valid artists of that name.
+
+## Grabbing an artist's discography and track ratings: 
+
+The program does this stage on its own, the user must only hit enter when the program instructs them to.
+
+## Creating and displaying a graph
+
+Hit enter and the program will take time to generate a graph on the display space. To restart the process, end the program by closing the window, and
+run it again.
