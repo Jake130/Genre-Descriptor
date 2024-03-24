@@ -2,9 +2,8 @@ import tkinter as tk
 from PIL import ImageTk, Image
 import urllib.request
 import io
-import spotify_requests as spr
-import https_requests as mxr
 import sys
+import spotify_requests as spr
 from create_rankings_csv import create_rankings_csv
 import display_album_ranking as dar
 
@@ -13,11 +12,11 @@ class GUI:
         self.root = tk.Tk()
         self.root.geometry("500x500")
         self.root.configure(bg='#fadd82')
-        self.root.title("Mood Visualization Project")
+        self.root.title("Track Popularity Indicator")
 
         #The header which stays static
         self.header = tk.Frame(master=self.root, bg='#fc9247')
-        self.label = tk.Label(self.header, text="Mood Visualization Project", bg="#f7bf31", font=('Tekton Pro', 45))
+        self.label = tk.Label(self.header, text="Track Popularity Indicator", bg="#f7bf31", font=('Tekton Pro', 45))
         self.label.pack(padx=20, pady=20)
 
         self.text_var = tk.StringVar()
