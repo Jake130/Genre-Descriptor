@@ -20,8 +20,9 @@ def main():
     if len(sys.argv)>5:
         raise RuntimeError("More than four arguments were entered!")
     #Allow the user to search for the artist they're looking for
-    print(spr.get_access())
+    #print(spr.get_access())
     gui = graphics.GUI()
+    gui.mainloop()
     searched_artist = spr.search_artist(arguments[1])
     index = 0
     while True:
